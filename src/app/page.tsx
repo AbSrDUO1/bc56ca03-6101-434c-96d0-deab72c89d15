@@ -17,20 +17,17 @@ const pricingItems = [
   { badge: ["Premium"], price: "$30", features: "All features included" },
 ];
 
-const testimonialsItems = [
-  { quote: "Amazing product!", author: "Customer A" },
-  { quote: "It changed my life!", author: "Customer B" },
-];
-
 export default function Home() {
   return (
     <div>
       <section id="hero" className="bg-[#F9FBFE]">
         <PepeHero
           style={{
-            section: { className: 'py-16', backgroundColor: '#F9FBFE' },
-            heading: { text: 'Welcome to Our Service', className: 'text-5xl font-bold' },
-            ctaStyle: { buttonText: 'Get Started', buttonClassName: 'bg-primary text-white' },
+            navbar: { logoSrc: '', className: '', logoClassName: '', buttonBgColor: '', buttonHoverBgColor: '', buttonTextColor: '', buttonHoverTextColor: '', buttonClassName: '', buttonContentClassName: '' },
+            section: { className: 'py-16', backgroundColor: '#F9FBFE', backgroundPattern: '', backgroundImage: '', spotlight: { width: '', height: '', left: '', top: '', rotate: '', color: '', blur: 0, opacity: 0, mobileWidth: '', mobileHeight: '', mobileLeft: '', mobileTop: '', mobileRotate: '' }, sparkles: { particleColor: '', particleDensity: 0, minSize: 0, maxSize: 0, speed: 0 } },
+            heading: { text: 'Welcome to Our Service', className: 'text-5xl font-bold', useRetroText: false, animation: 'none', shadowColor: '', shadowOffset: '', animationProps: { duration: 0, stagger: 0, start: '', end: '', variant: 'trigger' }, gradientColors: { from: '', to: '' } },
+            subheading: { text: '', className: '' },
+            ctaStyle: { containerClassName: '', addressText: '', addressClassName: '', buttonText: 'Get Started', buttonClassName: 'bg-primary text-white', iconClassName: '' }
           }}
           onMenuClick={() => {}}
           onContactClick={() => {}}
