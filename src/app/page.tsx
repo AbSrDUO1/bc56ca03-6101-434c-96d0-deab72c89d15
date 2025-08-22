@@ -38,6 +38,7 @@ export default function Home() {
           title={<h2>Features</h2>}
           description={<p>Explore the amazing features we offer.</p>}
           className="mb-8"
+          children={<></>}
         />
         <GalleryBento
           items={featuresItems}
@@ -49,6 +50,7 @@ export default function Home() {
           title={<h2>How It Works</h2>}
           description={<p>Simple steps to get you started.</p>}
           className="mb-8"
+          children={<></>}
         />
         {/* Add components for steps */}
       </section>
@@ -63,6 +65,7 @@ export default function Home() {
           title={<h2>About Us</h2>}
           description={<p>Our mission and vision.</p>}
           className="mb-8"
+          children={<></>}
         />
       </section>
       <section id="faq" className="bg-white">
@@ -70,6 +73,7 @@ export default function Home() {
           title={<h2>Frequently Asked Questions</h2>}
           description={<p>Your questions answered.</p>}
           className="mb-8"
+          children={<></>}
         />
       </section>
       <section id="contact" className="bg-[#F7F9FC]">
@@ -77,6 +81,7 @@ export default function Home() {
           title={<h2>Contact Us</h2>}
           description={<p>Get in touch with us.</p>}
           className="mb-8"
+          children={<></>}
         />
         {/* Contact form component */}
       </section>
