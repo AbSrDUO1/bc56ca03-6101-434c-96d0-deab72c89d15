@@ -4,7 +4,7 @@ import ContentTextbox from '@/components/textbox/ContentTextbox';
 import GalleryBento from '@/components/bento/galleryBento/GalleryBento';
 import PricingBento from '@/components/bento/PricingBento';
 import MomoCoinAbout from '@/components/sections/layouts/about/Momocoinabout';
-import { ArrowButton } from '@/components/buttons/ArrowButton';
+import ArrowButton from '@/components/buttons/ArrowButton';
 
 export default function Home() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });

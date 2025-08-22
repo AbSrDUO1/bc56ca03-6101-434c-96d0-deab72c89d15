@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter_Tight, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { useEffect } from 'react';
 
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
