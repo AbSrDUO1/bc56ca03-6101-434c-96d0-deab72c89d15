@@ -2,7 +2,6 @@
 import ContentTextbox from '@/components/textbox/ContentTextbox';
 import GalleryBento from '@/components/bento/galleryBento/GalleryBento';
 import PricingBento from '@/components/bento/PricingBento';
-import Testimonials from '@/components/sections/layouts/testimonials/Testimonials';
 import SimpleFooter from '@/components/footer/SimpleFooter';
 import PepeHero from '@/components/sections/layouts/hero/PepeHero';
 
@@ -13,9 +12,9 @@ const featuresItems = [
 ];
 
 const pricingItems = [
-  { badge: ["Basic", "icon1"], price: "$10", features: "Feature A, Feature B" },
-  { badge: ["Standard", "icon2"], price: "$20", features: "Feature A, Feature B, Feature C" },
-  { badge: ["Premium", "icon3"], price: "$30", features: "All features included" },
+  { badge: ["Basic"], price: "$10", features: "Feature A, Feature B" },
+  { badge: ["Standard"], price: "$20", features: "Feature A, Feature B, Feature C" },
+  { badge: ["Premium"], price: "$30", features: "All features included" },
 ];
 
 const testimonialsItems = [
@@ -60,12 +59,6 @@ export default function Home() {
         <PricingBento
           items={pricingItems}
           className="grid grid-cols-1 md:grid-cols-3 gap-6"
-        />
-      </section>
-      <section id="testimonials" className="bg-[#F9FAFB]">
-        <Testimonials
-          items={testimonialsItems}
-          className="mb-8"
         />
       </section>
       <section id="about" className="bg-white">
