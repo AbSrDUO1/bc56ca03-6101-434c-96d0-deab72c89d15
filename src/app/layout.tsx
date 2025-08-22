@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter_Tight, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { useEffect } from 'react';
 
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
@@ -15,20 +16,16 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "SAAS Landing Page (Single-Page Plan)",
-  description: "Convert visitors into signups by presenting clear value, features, pricing teaser, and a direct contact/signup CTA.",
+  title: "NimbusFlow",
+  description: "A crisp, conversion-focused single-page SaaS landing page.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
-      <body
-        className={`${interTight.variable} ${playfairDisplay.variable} antialiased`}
-      >
+      <body className={`${interTight.variable} ${playfairDisplay.variable} antialiased`}>
         {children}
       </body>
     </html>

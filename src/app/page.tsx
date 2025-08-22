@@ -1,90 +1,76 @@
 "use client"
+import { useState } from 'react';
 import ContentTextbox from '@/components/textbox/ContentTextbox';
 import GalleryBento from '@/components/bento/galleryBento/GalleryBento';
 import PricingBento from '@/components/bento/PricingBento';
-import SimpleFooter from '@/components/footer/SimpleFooter';
-import PepeHero from '@/components/sections/layouts/hero/PepeHero';
-
-const featuresItems = [
-  { title: "Feature One", content: "Clear description of feature one." },
-  { title: "Feature Two", content: "Clear description of feature two." },
-  { title: "Feature Three", content: "Clear description of feature three." },
-];
-
-const pricingItems = [
-  { badge: ["Basic"], price: "$10", features: "Feature A, Feature B" },
-  { badge: ["Standard"], price: "$20", features: "Feature A, Feature B, Feature C" },
-  { badge: ["Premium"], price: "$30", features: "All features included" },
-];
+import MomoCoinAbout from '@/components/sections/layouts/about/Momocoinabout';
+import { ArrowButton } from '@/components/buttons/ArrowButton';
 
 export default function Home() {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Mock submit action
+    console.log(formData);
+  };
+
   return (
-    <div>
-      <section id="hero" className="bg-[#F9FBFE]">
-        <PepeHero
-          style={{
-            navbar: { logoSrc: '', className: '', logoClassName: '', buttonBgColor: '', buttonHoverBgColor: '', buttonTextColor: '', buttonHoverTextColor: '', buttonClassName: '', buttonContentClassName: '' },
-            section: { className: 'py-16', backgroundColor: '#F9FBFE', backgroundPattern: '', backgroundImage: '', spotlight: { width: '', height: '', left: '', top: '', rotate: '', color: '', blur: '', opacity: 0, mobileWidth: '', mobileHeight: '', mobileLeft: '', mobileTop: '', mobileRotate: '' }, sparkles: { particleColor: '', particleDensity: 0, minSize: 0, maxSize: 0, speed: 0 } },
-            heading: { text: 'Welcome to Our Service', className: 'text-5xl font-bold', useRetroText: false, animation: 'none', shadowColor: '', shadowOffset: '', animationProps: { duration: 0, stagger: 0, start: '', end: '', variant: 'trigger' }, gradientColors: { from: '', to: '' } },
-            subheading: { text: '', className: '' },
-            ctaStyle: { containerClassName: '', addressText: '', addressClassName: '', buttonText: 'Get Started', buttonClassName: 'bg-primary text-white', iconClassName: '' }
-          }}
-          onMenuClick={() => {}}
-          onContactClick={() => {}}
-        />
-      </section>
-      <section id="features" className="bg-white">
+    <>
+      <section id="hero" className="bg-white py-18">
         <ContentTextbox
-          title={<h2>Features</h2>}
-          description={<p>Explore the amazing features we offer.</p>}
-          className="mb-8"
-          children={<></>}
-        />
+          title={<h1 className="text-4xl font-bold">Welcome to NimbusFlow</h1>}
+          description={<p className="text-lg">The future of SaaS solutions.</p>}
+          className="text-center"
+        >
+          <ArrowButton text="Get Started" onClick={() => alert('Navigating to sign-up')} className="mt-4 bg-blue-600 text-white" />
+        </ContentTextbox>
+      </section>
+
+      <section id="features" className="bg-gradient-to-b from-white to-[#F7FBFF] py-18">
         <GalleryBento
-          items={featuresItems}
+          items={[
+            { title: 'Feature 1', image: '/images/placeholder1.avif' },
+            { title: 'Feature 2', image: '/images/placeholder2.avif' },
+            { title: 'Feature 3', image: '/images/placeholder3.avif' }
+          ]}
           className="grid grid-cols-1 md:grid-cols-3 gap-6"
         />
       </section>
-      <section id="how-it-works" className="bg-[#F7F9FC]">
-        <ContentTextbox
-          title={<h2>How It Works</h2>}
-          description={<p>Simple steps to get you started.</p>}
-          className="mb-8"
-          children={<></>}
-        />
-        {/* Add components for steps */}
-      </section>
-      <section id="pricing" className="bg-white">
+
+      <section id="pricing" className="bg-white py-18">
         <PricingBento
-          items={pricingItems}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          items={[
+            { badge: ['Basic'], price: '$19', features: 'Feature 1, Feature 2', subtitle: 'Perfect for beginners' },
+            { badge: ['Pro'], price: '$49', features: 'Feature 1, Feature 2, Feature 3', subtitle: 'For the growing business' }
+          ]}
+          className="container"
         />
       </section>
-      <section id="about" className="bg-white">
-        <ContentTextbox
-          title={<h2>About Us</h2>}
-          description={<p>Our mission and vision.</p>}
-          className="mb-8"
-          children={<></>}
+
+      <section id="about" className="bg-white py-18">
+        <MomoCoinAbout
+          style={{ section: { className: 'text-center' } }}
         />
       </section>
-      <section id="faq" className="bg-white">
-        <ContentTextbox
-          title={<h2>Frequently Asked Questions</h2>}
-          description={<p>Your questions answered.</p>}
-          className="mb-8"
-          children={<></>}
-        />
+
+      <section id="contact" className="bg-white py-18">
+        <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
+          <div className="mb-4">
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+            <input type="text" id="name" className="mt-1 block w-full p-2 border border-gray-300 rounded-md" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+            <input type="email" id="email" className="mt-1 block w-full p-2 border border-gray-300 rounded-md" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+            <textarea id="message" className="mt-1 block w-full p-2 border border-gray-300 rounded-md" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })}></textarea>
+          </div>
+          <button type="submit" className="bg-blue-600 text-white p-2 rounded">Send</button>
+        </form>
       </section>
-      <section id="contact" className="bg-[#F7F9FC]">
-        <ContentTextbox
-          title={<h2>Contact Us</h2>}
-          description={<p>Get in touch with us.</p>}
-          className="mb-8"
-          children={<></>}
-        />
-        {/* Contact form component */}
-      </section>
-    </div>
+
+    </>
   );
 }

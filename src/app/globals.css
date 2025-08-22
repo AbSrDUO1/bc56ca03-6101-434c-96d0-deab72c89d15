@@ -1,3 +1,28 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-/* Your existing global styles go here */
+@layer utilities {
+  .font-playfair {
+    font-family: var(--font-playfair);
+  }
+
+  /* Additional utilities may follow here */
+}
+
+:root {
+  --vw: clamp(0.5rem, 0.8vw, 1rem);
+
+  /* colors */
+  --color-primary: #2563EB;
+  --color-secondary: #EAF2FF;
+  --color-accent: #F59E0B;
+  --color-text: #0F172A;
+  --color-background: #FFFFFF;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --vw: 3vw;
+  }
+}
+
+/* Additional component styles may follow here */
