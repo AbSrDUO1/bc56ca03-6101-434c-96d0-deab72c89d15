@@ -9,7 +9,7 @@ import ArrowButton from '@/components/buttons/ArrowButton';
 export default function Home() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Mock submit action
     console.log(formData);
   };
