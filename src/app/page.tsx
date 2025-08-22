@@ -10,7 +10,7 @@ export default function Home() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // Mock submit action
+    e.preventDefault();
     console.log(formData);
   };
 
@@ -49,7 +49,7 @@ export default function Home() {
 
       <section id="about" className="bg-white py-18">
         <MomoCoinAbout
-          style={{ section: { className: 'text-center', backgroundColor: '#ffffff', backgroundPattern: '', backgroundImage: '', spotlight: { width: '', height: '', left: '', top: '', rotate: '', color: '', blur: '', opacity: 0, mobileWidth: '', mobileHeight: '', mobileLeft: '', mobileTop: '', mobileRotate: '' } }, innerClassName: '', showBorder: false, fadeBottom: false, gradient: { show: false, radialColor: '', linearColor: '', radialOpacity: '', linearOpacity: '', linearOpacityMobile: '', className: '', inset: '', rounded: '' }, title: { text: 'About Us', className: '', useRetroText: false, animation: 'none', shadowColor: '', shadowOffset: '', animationProps: { duration: 0, stagger: 0, start: '', end: '', variant: 'scrub' }, gradientColors: { from: '', to: '' } }, descriptions: { texts: [], className: '', containerClassName: '' }, layout: { alignStart: false, descriptionClassName: '', textboxClassName: '' }, button: { className: '', childClassName: '', iconClassName: '', variant: 'none' }, image: { parentClassName: '', className: '' }}
+          style={{ section: { className: 'text-center', backgroundColor: '#ffffff', backgroundPattern: '', backgroundImage: '', spotlight: { width: '', height: '', left: '', top: '', rotate: '', color: '', blur: '', opacity: 0, mobileWidth: '', mobileHeight: '', mobileLeft: '', mobileTop: '', mobileRotate: '' }, sparkles: { particleColor: '', particleDensity: 0, minSize: 0, maxSize: 0, speed: 0 }, }, innerClassName: '', showBorder: false, fadeBottom: false, gradient: { show: false, radialColor: '', linearColor: '', radialOpacity: '', linearOpacity: '', linearOpacityMobile: '', className: '', inset: '', rounded: '' }, title: { text: 'About Us', className: '', useRetroText: false, animation: 'none', shadowColor: '', shadowOffset: '', animationProps: { duration: 0, stagger: 0, start: '', end: '', variant: 'scrub' }, gradientColors: { from: '', to: '' } }, descriptions: { texts: [], className: '', containerClassName: '' }, layout: { alignStart: false, descriptionClassName: '', textboxClassName: '' }, button: { className: '', childClassName: '', iconClassName: '', variant: 'none' }, image: { parentClassName: '', className: '' }}
         />
       </section>
 
@@ -70,7 +70,6 @@ export default function Home() {
           <button type="submit" className="bg-blue-600 text-white p-2 rounded">Send</button>
         </form>
       </section>
-
     </>
   );
 }
